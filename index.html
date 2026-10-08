@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Shifa Khanam - Software Engineer specializing in modern web development, scalable systems, and clean UI architecture.">
+    <meta name="keywords" content="Software Engineer, Full Stack Developer, Web Development, Portfolio, JavaScript, Python">
+    <meta name="author" content="Shifa Khanam">
+
+    <title>Shifa Khanam | Software Engineer Portfolio</title>
+
+    <!-- Google Fonts: Pixel Art (Press Start 2P, Silkscreen) + Modern Typography (Inter, Plus Jakarta Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- =========================================================
+         BACKDROP OVERLAY FOR MOBILE SIDEBAR
+         ========================================================= -->
+    <div id="sidebar-backdrop" class="sidebar-backdrop" aria-hidden="true"></div>
+
+    <!-- =========================================================
+         VERTICAL NAVIGATION BAR (LEFT SIDE OF SCREEN)
+         - Fixed vertical sidebar with pixel art aesthetic
+         - Complementary lavender accents, tactile pixel buttons
+         - 8 links: Home, About Me, Skills, Timeline, Projects,
+           Testimonials, Chat, and Contact
+         - Integrated Night Mode Toggle & HUD status indicators
+         ========================================================= -->
+    <aside id="sidebar-navigation" class="sidebar-navigation" aria-label="Primary Navigation">
+        <!-- Sidebar Brand & Player HUD -->
+        <div class="sidebar-brand-box">
+            <a href="#hero" class="pixel-brand" aria-label="Shifa Khanam Portfolio Home">
+                <span class="pixel-brand-icon" aria-hidden="true">👾</span>
+                <div class="pixel-brand-text">
+                    <span class="brand-title">SHIFA.DEV</span>
+                    <span class="brand-sub">LVL 99 ENG</span>
+                </div>
+            </a>
+            <div class="pixel-hud-pill" aria-label="Status: Ready">
+                <span class="hud-pulse-dot" aria-hidden="true"></span>
+                <span class="hud-status-text">ONLINE</span>
+            </div>
+        </div>
+
+        <!-- Vertical Navigation Menu -->
+        <nav class="sidebar-nav" aria-label="Section Navigation">
+            <ul class="sidebar-nav-list" role="list">
+                <li class="sidebar-nav-item">
+                    <a href="#hero" class="sidebar-nav-link active" data-nav="hero">
+                        <span class="pixel-cursor" aria-hidden="true">&gt;</span>
+                        <span class="pixel-nav-icon" aria-hidden="true">🏠</span>
+                        <span class="pixel-nav-text">Home</span>
+                        <span class="pixel-slot-tag" aria-hidden="true">[01]</span>
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#about" class="sidebar-nav-link" data-nav="about">
+                        <span class="pixel-cursor" aria-hidden="true">&gt;</span>
+                        <span class="pixel-nav-icon" aria-hidden="true">👤</span>
+                        <span class="pixel-nav-text">About Me</span>
+                        <span class="pixel-slot-tag" aria-hidden="true">[02]</span>
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#skills" class="sidebar-nav-link" data-nav="skills">
+                        <span class="pixel-cursor" aria-hidden="true">&gt;</span>
+                        <span class="pixel-nav-icon" aria-hidden="true">⚡</span>
+                        <span class="pixel-nav-text">Skills</span>
+                        <span class="pixel-slot-tag" aria-hidden="true">[03]</span>
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#timeline" class="sidebar-nav-link" data-nav="timeline">
+                        <span class="pixel-cursor" aria-hidden="true">&gt;</span>
+                        <span class="pixel-nav-icon" aria-hidden="true">📜</span>
+                        <span class="pixel-nav-text">Timeline</span>
+                        <span class="pixel-slot-tag" aria-hidden="true">[04]</span>
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#projects" class="sidebar-nav-link" data-nav="projects">
+                        <span class="pixel-cursor" aria-hidden="true">&gt;</span>
+                        <span class="pixel-nav-icon" aria-hidden="true">⚔️</span>
+                        <span class="pixel-nav-text">Projects</span>
+                        <span class="pixel-slot-tag" aria-hidden="true">[05]</span>
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#testimonials" class="sidebar-nav-link" data-nav="testimonials">
+                        <span class="pixel-cursor" aria-hidden="true">&gt;</span>
+                        <span class="pixel-nav-icon" aria-hidden="true">⭐</span>
+                        <span class="pixel-nav-text">Testimonials</span>
+                        <span class="pixel-slot-tag" aria-hidden="true">[06]</span>
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#chat" class="sidebar-nav-link" data-nav="chat">
+                        <span class="pixel-cursor" aria-hidden="true">&gt;</span>
+                        <span class="pixel-nav-icon" aria-hidden="true">💬</span>
+                        <span class="pixel-nav-text">Chat</span>
+                        <span class="pixel-slot-tag" aria-hidden="true">[07]</span>
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#contact" class="sidebar-nav-link" data-nav="contact">
+                        <span class="pixel-cursor" aria-hidden="true">&gt;</span>
+                        <span class="pixel-nav-icon" aria-hidden="true">✉️</span>
+                        <span class="pixel-nav-text">Contact</span>
+                        <span class="pixel-slot-tag" aria-hidden="true">[08]</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Sidebar Footer Controls: Night Mode Toggle & Status -->
+        <div class="sidebar-footer">
+            <button id="theme-toggle" class="pixel-theme-toggle theme-toggle" type="button" aria-label="Toggle night mode" title="Toggle theme">
+                <span class="pixel-toggle-icons" aria-hidden="true">
+                    <!-- Sun icon shown in night mode -->
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <!-- Moon icon shown in light mode -->
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </span>
+                <span class="pixel-toggle-text">MODE</span>
+            </button>
+            <div class="pixel-footer-info">
+                <span class="pixel-slot-tag">&copy; 2026 // READY</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- =========================================================
+         MOBILE TOP BAR (Visible on smaller screens < 1025px)
+         Allows opening the left sidebar with a pixel hamburger button
+         ========================================================= -->
+    <header id="mobile-header" class="mobile-header" aria-label="Mobile Navigation Bar">
+        <button id="mobile-sidebar-toggle" class="pixel-menu-btn" type="button" aria-label="Toggle navigation drawer" aria-expanded="false" aria-controls="sidebar-navigation">
+            <span class="pixel-hamburger-box" aria-hidden="true">
+                <span class="pixel-hamburger-bar"></span>
+                <span class="pixel-hamburger-bar"></span>
+                <span class="pixel-hamburger-bar"></span>
+            </span>
+            <span class="pixel-btn-label">MENU</span>
+        </button>
+
+        <a href="#hero" class="mobile-brand-logo" aria-label="Home">
+            <span class="pixel-brand-icon">👾</span>
+            <span class="mobile-brand-text">SHIFA.DEV</span>
+        </a>
+
+        <button id="mobile-theme-toggle" class="pixel-theme-toggle mobile-theme-btn theme-toggle" type="button" aria-label="Toggle night mode" title="Toggle theme">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
+    </header>
+
+    <!-- =========================================================
+         MAIN CONTENT AREA
+         Houses all core portfolio sections using semantic tags.
+         ========================================================= -->
+    <main id="main-content">
+
+        <!-- =====================================================
+             1. HERO SECTION (LAVENDER MINIMAL DESIGN)
+             - Welcomes visitors with a title & brief tagline
+             - Uses user-provided background image with lavender overlay
+             - Clean minimal aesthetic with soft lavender accents
+             ===================================================== -->
+        <section id="hero" class="hero-section" aria-labelledby="hero-title">
+            <div class="hero-ambient-glow" aria-hidden="true"></div>
+
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <!-- Welcoming Greeting Badge -->
+                    <div class="welcome-badge">
+                        <span class="welcome-dot"></span>
+                        <span class="welcome-text">Welcome to my portfolio</span>
+                    </div>
+
+                    <!-- Welcoming Title -->
+                    <h1 id="hero-title" class="hero-title">
+                        Hello, I'm <span class="text-lavender">Shifa Khanam</span>
+                    </h1>
+
+                    <!-- Role Subtitle -->
+                    <h2 class="hero-role">Software Engineer &amp; Full-Stack Builder</h2>
+
+                    <!-- Brief Welcoming Tagline -->
+                    <p class="hero-tagline">
+                        Designing clean, elegant, and reliable digital experiences with modern web technologies, scalable architectures, and thoughtful engineering.
+                    </p>
+
+                    <!-- Interactive CTAs -->
+                    <div class="hero-cta-group">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>Explore Projects</span>
+                            <span class="btn-arrow">&rarr;</span>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                        <a href="Shifa_Khanam_Resume.pdf" class="btn btn-outline" download>Download CV</a>
+                    </div>
+
+                    <!-- Core Focus Tech Pills -->
+                    <div class="hero-tech-pills">
+                        <span class="tech-pill-label">Core Focus:</span>
+                        <div class="tech-pills-list">
+                            <span class="tech-pill">JavaScript (ES6+)</span>
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">React.js</span>
+                            <span class="tech-pill">Node.js</span>
+                            <span class="tech-pill">REST APIs</span>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="hero-socials">
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="social-link">
+                            <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="social-link">
+                            <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="mailto:shifa@example.com" aria-label="Email Shifa Khanam" class="social-link">
+                            <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                            </svg>
+                            <span>Email</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Visual: Minimalist Lavender Profile Card -->
+                <div class="hero-visual">
+                    <div class="avatar-card">
+                        <div class="avatar-wrapper">
+                            <img src="WhatsApp Image 2026-10-07 at 10.33.34 AM.jpeg" alt="Shifa Khanam profile photo" class="avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <!-- Fallback avatar icon if image is not loaded -->
+                            <div class="avatar-fallback" style="display: none;">
+                                <span>SK</span>
+                            </div>
+                        </div>
+                        <div class="status-badge">
+                            <span class="status-indicator"></span>
+                            <span class="status-text">Available for new opportunities</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             2. ABOUT ME SECTION (LAVENDER MINIMAL + PIXEL ART AVATAR)
+             - Profile image with pixel-art avatar
+             - Short bio describing the software engineer
+             - Career highlights & personal interests in minimalist cards
+             ===================================================== -->
+        <section id="about" class="about-section" aria-labelledby="about-heading">
+            <div class="container">
+                <header class="section-header">
+                    <p class="section-subtitle">[ CHARACTER PROFILE // BIO ]</p>
+                    <h2 id="about-heading" class="section-title">About Me</h2>
+                </header>
+
+                <div class="about-layout-grid">
+                    <!-- Left Column: Pixel Avatar Card & Player Stats -->
+                    <div class="about-avatar-column">
+                        <div class="pixel-avatar-card">
+                            <!-- Card Header Ribbon -->
+                            <div class="avatar-card-header">
+                                <span class="pixel-slot-tag">PLAYER 01</span>
+                                <span class="pixel-stat-badge">
+                                    <span class="hud-pulse-dot" aria-hidden="true"></span> ACTIVE
+                                </span>
+                            </div>
+
+                            <!-- Pixel Art Avatar Frame -->
+                            <div class="pixel-avatar-frame">
+                                <img src="pixel-avatar.jpg" alt="Pixel Art Avatar of Shifa Khanam" class="pixel-avatar-img" onerror="this.onerror=null; this.src='WhatsApp Image 2026-10-07 at 10.33.34 AM.jpeg';">
+                            </div>
+
+                            <!-- Avatar Details & RPG Stats -->
+                            <div class="avatar-card-body">
+                                <h3 class="avatar-player-name">Shifa Khanam</h3>
+                                <p class="avatar-player-role">&gt; Full-Stack Software Engineer</p>
+
+                                <div class="pixel-rpg-stats" aria-label="Character Attributes">
+                                    <div class="rpg-stat-row">
+                                        <span class="stat-name">LOGIC</span>
+                                        <div class="stat-bar-track">
+                                            <div class="stat-bar-fill" style="width: 95%;"></div>
+                                        </div>
+                                        <span class="stat-val">95%</span>
+                                    </div>
+                                    <div class="rpg-stat-row">
+                                        <span class="stat-name">CLEAN CODE</span>
+                                        <div class="stat-bar-track">
+                                            <div class="stat-bar-fill" style="width: 98%;"></div>
+                                        </div>
+                                        <span class="stat-val">98%</span>
+                                    </div>
+                                    <div class="rpg-stat-row">
+                                        <span class="stat-name">CREATIVITY</span>
+                                        <div class="stat-bar-track">
+                                            <div class="stat-bar-fill" style="width: 92%;"></div>
+                                        </div>
+                                        <span class="stat-val">92%</span>
+                                    </div>
+                                </div>
+
+                                <div class="avatar-quick-meta">
+                                    <span class="meta-pill">📍 India / Remote</span>
+                                    <span class="meta-pill">💼 Open to Hire</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Bio, Highlights & Personal Interests -->
+                    <div class="about-content-column">
+                        <!-- Short Bio -->
+                        <div class="about-bio-card">
+                            <h3 class="card-subtitle-tag">&gt; THE DEVELOPER JOURNEY</h3>
+                            <p class="about-lead-text">
+                                Hello, I'm <strong class="text-highlight">Shifa Khanam</strong>. I am a software engineer dedicated to building reliable, high-performance web applications and scalable backend systems.
+                            </p>
+                            <p class="about-body-text">
+                                My engineering philosophy bridges clean architectural fundamentals with human-centered product thinking. I love dissecting complex problems into intuitive, well-documented codebases, whether architecting secure RESTful microservices, optimizing query performance, or crafting accessible web experiences.
+                            </p>
+                        </div>
+
+                        <!-- Career Highlights -->
+                        <div class="about-section-group">
+                            <h3 class="group-title">
+                                <span class="pixel-cursor">&gt;</span> Career Highlights
+                            </h3>
+                            <div class="highlights-grid">
+                                <div class="highlight-card">
+                                    <div class="highlight-icon-box">🚀</div>
+                                    <div class="highlight-details">
+                                        <h4 class="highlight-heading">Full-Stack Architecture</h4>
+                                        <p class="highlight-description">
+                                            Engineered end-to-end web applications utilizing JavaScript (ES6+), React, Node.js, Express, and Python with modular design patterns.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="highlight-card">
+                                    <div class="highlight-icon-box">⚡</div>
+                                    <div class="highlight-details">
+                                        <h4 class="highlight-heading">Scalable APIs &amp; Databases</h4>
+                                        <p class="highlight-description">
+                                            Designed high-throughput REST APIs, structured database schemas with PostgreSQL/MongoDB, and implemented robust caching and JWT authentication.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="highlight-card">
+                                    <div class="highlight-icon-box">🛡️</div>
+                                    <div class="highlight-details">
+                                        <h4 class="highlight-heading">Clean Code &amp; Best Practices</h4>
+                                        <p class="highlight-description">
+                                            Committed to strict accessibility standards (WCAG), test coverage, maintainable git workflows, and agile team collaboration.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Personal Interests -->
+                        <div class="about-section-group">
+                            <h3 class="group-title">
+                                <span class="pixel-cursor">&gt;</span> Personal Interests
+                            </h3>
+                            <div class="interests-tags-container">
+                                <span class="interest-chip">
+                                    <span class="chip-icon">🎮</span> Retro &amp; Indie Gaming
+                                </span>
+                                <span class="interest-chip">
+                                    <span class="chip-icon">🎨</span> Pixel Art &amp; Creative Coding
+                                </span>
+                                <span class="interest-chip">
+                                    <span class="chip-icon">🌐</span> Open Source &amp; Dev Tooling
+                                </span>
+                                <span class="interest-chip">
+                                    <span class="chip-icon">🧩</span> Algorithmic Problem Solving
+                                </span>
+                                <span class="interest-chip">
+                                    <span class="chip-icon">☕</span> Specialty Coffee &amp; Tech Blogs
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Quick Statistics Counters -->
+                        <div class="about-stats-row">
+                            <div class="stat-counter-card">
+                                <span class="counter-number">10+</span>
+                                <span class="counter-label">Shipped Projects</span>
+                            </div>
+                            <div class="stat-counter-card">
+                                <span class="counter-number">100%</span>
+                                <span class="counter-label">Clean Code Commitment</span>
+                            </div>
+                            <div class="stat-counter-card">
+                                <span class="counter-number">&lt; 100ms</span>
+                                <span class="counter-label">API Latency Target</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             3. SKILLS SECTION — Pixel Art RPG Skill Tree
+             A visually immersive, retro-RPG-inspired skill matrix.
+             Each category is styled as a "skill tree branch" with
+             individual skills showing proficiency via animated
+             progress bars. The pixel art aesthetic uses stepped
+             borders, retro fonts, and XP-style labels.
+             ===================================================== -->
+        <section id="skills" class="skills-section" aria-labelledby="skills-heading">
+            <!-- Decorative pixel background dots -->
+            <div class="skills-pixel-bg" aria-hidden="true"></div>
+
+            <div class="container">
+                <header class="section-header">
+                    <p class="section-subtitle">⚔️ Skill Tree</p>
+                    <h2 id="skills-heading" class="section-title">Skills &amp; Technologies</h2>
+                    <p class="skills-intro-text">Every great quest begins with a balanced build. Here's my character sheet — years of XP forged across the full stack.</p>
+                </header>
+
+                <!-- Overall XP Level Banner -->
+                <div class="skills-xp-banner" aria-label="Overall experience level">
+                    <span class="xp-banner-label">LVL</span>
+                    <span class="xp-banner-level">42</span>
+                    <div class="xp-banner-bar-track">
+                        <div class="xp-banner-bar-fill" style="width: 78%;"></div>
+                    </div>
+                    <span class="xp-banner-text">12,450 / 16,000 XP</span>
+                </div>
+
+                <div class="skills-grid">
+
+                    <!-- ==============================================
+                         FRONTEND ENGINEERING
+                         Skills for building user interfaces. HTML5 is
+                         the structural backbone, CSS3/SCSS provide
+                         styling power, JavaScript (ES6+) delivers
+                         interactivity, React.js enables component-based
+                         architecture, and Responsive Design ensures
+                         cross-device compatibility.
+                         ============================================== -->
+                    <article class="skill-category-card" data-category="frontend">
+                        <div class="category-header-pixel">
+                            <!-- Icon representing client-side UI work -->
+                            <span class="category-pixel-icon">🖥️</span>
+                            <div>
+                                <h3 class="category-title">Frontend Engineering</h3>
+                                <p class="category-desc">Crafting responsive, intuitive, and modern client-side interfaces.</p>
+                            </div>
+                        </div>
+                        <ul class="skill-progress-list">
+                            <!-- HTML5: The semantic structure of every web project -->
+                            <li class="skill-item">
+                                <div class="skill-item-header">
+                                    <span class="skill-name">HTML5</span>
+                                    <span class="skill-level-badge" data-level="master">MASTER</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="95" style="--bar-width: 95%;"></div>
+                                </div>
+                                <span class="skill-xp-label">9,500 XP</span>
+                            </li>
+                            <!-- CSS3 / SCSS: Advanced layout, animations, preprocessor mastery -->
+                            <li class="skill-item">
+                                <div class="skill-item-header">
+                                    <span class="skill-name">CSS3 / SCSS</span>
+                                    <span class="skill-level-badge" data-level="master">MASTER</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="92" style="--bar-width: 92%;"></div>
+                                </div>
+                                <span class="skill-xp-label">9,200 XP</span>
+                            </li>
+                            <!-- JavaScript (ES6+): Modern JS with async/await, modules, destructuring -->
+                            <li class="skill-item">
+                                <div class="skill-item-header">
+                                    <span class="skill-name">JavaScript (ES6+)</span>
+                                    <span class="skill-level-badge" data-level="expert">EXPERT</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="88" style="--bar-width: 88%;"></div>
+                                </div>
+                                <span class="skill-xp-label">8,800 XP</span>
+                            </li>
+                            <!-- React.js: Component architecture, hooks, state management -->
+                            <li class="skill-item">
+                                <div class="skill-item-header">
+                                    <span class="skill-name">React.js</span>
+                                    <span class="skill-level-badge" data-level="expert">EXPERT</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="85" style="--bar-width: 85%;"></div>
+                                </div>
+                                <span class="skill-xp-label">8,500 XP</span>
+                            </li>
+                            <!-- Responsive Design: Mobile-first, fluid grids, media queries -->
+                            <li class="skill-item">
+                                <div class="skill-item-header">
+                                    <span class="skill-name">Responsive Design</span>
+                                    <span class="skill-level-badge" data-level="master">MASTER</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="93" style="--bar-width: 93%;"></div>
+                                </div>
+                                <span class="skill-xp-label">9,300 XP</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <!-- ==============================================
+                         BACKEND & APIs
+                         Server-side technologies. Node.js provides the
+                         runtime, Express simplifies routing, Python is
+                         used for scripting & data tasks, RESTful APIs
+                         define the service architecture, and JWT/Auth
+                         ensures secure access control.
+                         ============================================== -->
+                    <article class="skill-category-card" data-category="backend">
+                        <div class="category-header-pixel">
+                            <!-- Icon representing server & API infrastructure -->
+                            <span class="category-pixel-icon">⚙️</span>
+                            <div>
+                                <h3 class="category-title">Backend &amp; APIs</h3>
+                                <p class="category-desc">Designing robust business logic and scalable web services.</p>
+                            </div>
+                        </div>
+                        <ul class="skill-progress-list">
+                            <!-- Node.js: Server-side JavaScript runtime for scalable I/O -->
+                            <li class="skill-item">
+                                <div class="skill-item-header">
+                                    <span class="skill-name">Node.js</span>
+                                    <span class="skill-level-badge" data-level="expert">EXPERT</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="85" style="--bar-width: 85%;"></div>
+                                </div>
+                                <span class="skill-xp-label">8,500 XP</span>
+                            </li>
+                            <!-- Express: Lightweight framework for building REST APIs -->
+                            <li class="skill-item">
+                                <div class="skill-item-header">
+                                    <span class="skill-name">Express</span>
+                                    <span class="skill-level-badge" data-level="expert">EXPERT</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="82" style="--bar-width: 82%;"></div>
+                                </div>
+                                <span class="skill-xp-label">8,200 XP</span>
+                            </li>
+                            <!-- Python: Versatile language for scripting, automation, and ML -->
+                            <li class="skill-item">
+                                <div class="skill-item-header">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-level-badge" data-level="advanced">ADVANCED</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="78" style="--bar-width: 78%;"></div>
+                                </div>
+                                <span class="skill-xp-label">7,800 XP</span>
+                            </li>
+                            <!-- RESTful APIs: Industry-standard HTTP-based service interfaces -->
+                            <li class="skill-item">
+                                <div class="skill-item-header">
+                                    <span class="skill-name">RESTful APIs</span>
+                                    <span class="skill-level-badge" data-level="expert">EXPERT</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="87" style="--bar-width: 87%;"></div>
+                                </div>
+                                <span class="skill-xp-label">8,700 XP</span>
+                            </li>
+                            <!-- Authentication / JWT: Secure token-based auth flows -->
+                            <li class="skill-item">
+                                <div class="skill-item-header">
+                                    <span class="skill-name">Auth / JWT</span>
+                                    <span class="skill-level-badge" data-level="advanced">ADVANCED</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="75" style="--bar-width: 75%;"></div>
+                                </div>
+                                <span class="skill-xp-label">7,500 XP</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <!-- ==============================================
+                         DATABASES & CLOUD
+                         Data persistence and infrastructure skills.
+                         PostgreSQL for complex relational data, MongoDB
+                         for flexible document storage, MySQL for
+                         traditional RDBMS, Git/GitHub for version
+                         control, and Cloud for deployment pipelines.
+                         ============================================== -->
+                    <article class="skill-category-card" data-category="database">
+                        <div class="category-header-pixel">
+                            <!-- Icon representing data storage & cloud infra -->
+                            <span class="category-pixel-icon">🗄️</span>
+                            <div>
+                                <h3 class="category-title">Databases &amp; Cloud</h3>
+                                <p class="category-desc">Managing data storage, relational models, and infrastructure.</p>
+                            </div>
+                        </div>
+                        <ul class="skill-progress-list">
+                            <!-- PostgreSQL: Advanced relational database with JSON support -->
+                            <li class="skill-item">
+                                <div class="skill-item-header">
+                                    <span class="skill-name">PostgreSQL</span>
+                                    <span class="skill-level-badge" data-level="advanced">ADVANCED</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="80" style="--bar-width: 80%;"></div>
+                                </div>
+                                <span class="skill-xp-label">8,000 XP</span>
+                            </li>
+                            <!-- MongoDB: NoSQL document database for flexible schemas -->
+                            <li class="skill-item">
+                                <div class="skill-item-header">
+                                    <span class="skill-name">MongoDB</span>
+                                    <span class="skill-level-badge" data-level="advanced">ADVANCED</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="77" style="--bar-width: 77%;"></div>
+                                </div>
+                                <span class="skill-xp-label">7,700 XP</span>
+                            </li>
+                            <!-- MySQL: Classic relational database, widely used in production -->
+                            <li class="skill-item">
+                                <div class="skill-item-header">
+                                    <span class="skill-name">MySQL</span>
+                                    <span class="skill-level-badge" data-level="advanced">ADVANCED</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="76" style="--bar-width: 76%;"></div>
+                                </div>
+                                <span class="skill-xp-label">7,600 XP</span>
+                            </li>
+                            <!-- Git & GitHub: Version control and collaborative development -->
+                            <li class="skill-item">
+                                <div class="skill-item-header">
+                                    <span class="skill-name">Git &amp; GitHub</span>
+                                    <span class="skill-level-badge" data-level="expert">EXPERT</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="90" style="--bar-width: 90%;"></div>
+                                </div>
+                                <span class="skill-xp-label">9,000 XP</span>
+                            </li>
+                            <!-- Cloud Platforms: AWS/GCP basics, deployment & CI/CD pipelines -->
+                            <li class="skill-item">
+                                <div class="skill-item-header">
+                                    <span class="skill-name">Cloud (AWS/GCP)</span>
+                                    <span class="skill-level-badge" data-level="intermediate">INTER</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="65" style="--bar-width: 65%;"></div>
+                                </div>
+                                <span class="skill-xp-label">6,500 XP</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <!-- ==============================================
+                         ENGINEERING CORE
+                         Foundational computer science & professional
+                         skills. DSA for algorithmic thinking, OOP for
+                         maintainable architecture, Problem Solving for
+                         critical reasoning, and Agile/Scrum for team
+                         velocity and iterative delivery.
+                         ============================================== -->
+                    <article class="skill-category-card" data-category="core">
+                        <div class="category-header-pixel">
+                            <!-- Icon representing foundational engineering knowledge -->
+                            <span class="category-pixel-icon">🧠</span>
+                            <div>
+                                <h3 class="category-title">Engineering Core</h3>
+                                <p class="category-desc">Core competencies forming the foundation of engineering solutions.</p>
+                            </div>
+                        </div>
+                        <ul class="skill-progress-list">
+                            <!-- DSA: Data structures & algorithms — the backbone of CS -->
+                            <li class="skill-item">
+                                <div class="skill-item-header">
+                                    <span class="skill-name">DSA</span>
+                                    <span class="skill-level-badge" data-level="expert">EXPERT</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="88" style="--bar-width: 88%;"></div>
+                                </div>
+                                <span class="skill-xp-label">8,800 XP</span>
+                            </li>
+                            <!-- OOP: Object-Oriented Design for modular, maintainable code -->
+                            <li class="skill-item">
+                                <div class="skill-item-header">
+                                    <span class="skill-name">OOP Design</span>
+                                    <span class="skill-level-badge" data-level="expert">EXPERT</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="86" style="--bar-width: 86%;"></div>
+                                </div>
+                                <span class="skill-xp-label">8,600 XP</span>
+                            </li>
+                            <!-- Problem Solving: Analytical thinking for debugging & optimization -->
+                            <li class="skill-item">
+                                <div class="skill-item-header">
+                                    <span class="skill-name">Problem Solving</span>
+                                    <span class="skill-level-badge" data-level="master">MASTER</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="94" style="--bar-width: 94%;"></div>
+                                </div>
+                                <span class="skill-xp-label">9,400 XP</span>
+                            </li>
+                            <!-- Agile / Scrum: Iterative development, sprint planning, retrospectives -->
+                            <li class="skill-item">
+                                <div class="skill-item-header">
+                                    <span class="skill-name">Agile / Scrum</span>
+                                    <span class="skill-level-badge" data-level="advanced">ADVANCED</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="80" style="--bar-width: 80%;"></div>
+                                </div>
+                                <span class="skill-xp-label">8,000 XP</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                </div><!-- /.skills-grid -->
+
+                <!-- Pixel-art style total XP footer -->
+                <div class="skills-total-footer">
+                    <span class="total-xp-icon">⭐</span>
+                    <span class="total-xp-text">Total XP Earned: <strong>167,500</strong></span>
+                    <span class="total-xp-rank">Rank: <strong class="text-lavender">Legendary</strong></span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =====================================================
+             4. TIMELINE SECTION
+             Chronological journey of professional experience & education.
+             ===================================================== -->
+        <section id="timeline" class="timeline-section" aria-labelledby="timeline-heading">
+            <div class="container">
+                <header class="section-header">
+                    <p class="section-subtitle">Career &amp; Education Journey</p>
+                    <h2 id="timeline-heading" class="section-title">Timeline</h2>
+                </header>
+
+                <div class="timeline-container">
+                    <!-- Timeline Item 1: Professional Experience Placeholder -->
+                    <article class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2023 - Present</span>
+                            <h3 class="timeline-title">Software Engineer</h3>
+                            <h4 class="timeline-organization">Tech Solutions Inc.</h4>
+                            <p class="timeline-description">
+                                <!-- Placeholder: Add key responsibilities, technical achievements, and quantifiable results -->
+                                Developed and maintained responsive web applications, collaborated with cross-functional product teams, and engineered scalable API endpoints with rigorous testing standards.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">REST APIs</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Timeline Item 2: Internship / Project Experience Placeholder -->
+                    <article class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2022 - 2023</span>
+                            <h3 class="timeline-title">Software Developer Intern</h3>
+                            <h4 class="timeline-organization">Digital Innovations Lab</h4>
+                            <p class="timeline-description">
+                                <!-- Placeholder: Add internship deliverables, tools learned, and team contributions -->
+                                Contributed to client dashboard development, optimized database queries for 25% faster response times, and participated in sprint reviews and code refactoring.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">Web Development</span>
+                                <span class="tag">SQL</span>
+                                <span class="tag">Git</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Timeline Item 3: Academic Background Placeholder -->
+                    <article class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2019 - 2023</span>
+                            <h3 class="timeline-title">Bachelor of Technology (B.Tech)</h3>
+                            <h4 class="timeline-organization">Computer Science &amp; Engineering</h4>
+                            <p class="timeline-description">
+                                <!-- Placeholder: Add major coursework, honors, activities, or academic projects -->
+                                Graduated with a strong foundation in computer science principles, software architecture, data structures, and computer networks.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">Data Structures</span>
+                                <span class="tag">Algorithms</span>
+                                <span class="tag">OS</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             5. PROJECTS SECTION
+             Featured software projects with tech stacks and links.
+             ===================================================== -->
+        <section id="projects" class="projects-section" aria-labelledby="projects-heading">
+            <div class="container">
+                <header class="section-header">
+                    <p class="section-subtitle">What I've Built</p>
+                    <h2 id="projects-heading" class="section-title">Featured Projects</h2>
+                </header>
+
+                <div class="projects-grid">
+                    <!-- Project Card 1 (Placeholder) -->
+                    <article class="project-card">
+                        <div class="project-preview-placeholder">
+                            <span class="placeholder-icon">🚀</span>
+                            <span class="placeholder-text">Project Preview</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span class="project-tag">Full-Stack</span>
+                                <span class="project-tag">Node.js</span>
+                                <span class="project-tag">React</span>
+                            </div>
+                            <h3 class="project-title">Cloud Task Orchestrator</h3>
+                            <p class="project-description">
+                                <!-- Placeholder: Describe the project scope, problem solved, architecture, and results -->
+                                An automated task management platform featuring real-time synchronization, role-based access control, and analytics dashboards.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <span>Code Repository</span> &rarr;
+                                </a>
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <span>Live Demo</span> &nearr;
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 2 (Placeholder) -->
+                    <article class="project-card">
+                        <div class="project-preview-placeholder">
+                            <span class="placeholder-icon">📊</span>
+                            <span class="placeholder-text">Project Preview</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span class="project-tag">API</span>
+                                <span class="project-tag">Express</span>
+                                <span class="project-tag">MongoDB</span>
+                            </div>
+                            <h3 class="project-title">Microservices E-Commerce API</h3>
+                            <p class="project-description">
+                                <!-- Placeholder: Add details about API endpoints, caching, microservices, and database design -->
+                                High-throughput REST API with secure authentication, stripe payment integration, product filtering, and cached query response pipelines.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <span>Code Repository</span> &rarr;
+                                </a>
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <span>API Docs</span> &nearr;
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 3 (Placeholder) -->
+                    <article class="project-card">
+                        <div class="project-preview-placeholder">
+                            <span class="placeholder-icon">💻</span>
+                            <span class="placeholder-text">Project Preview</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span class="project-tag">Frontend</span>
+                                <span class="project-tag">Vanilla JS</span>
+                                <span class="project-tag">CSS Grid</span>
+                            </div>
+                            <h3 class="project-title">Developer Portfolio System</h3>
+                            <p class="project-description">
+                                <!-- Placeholder: Highlight design system, accessibility, responsive behavior, and performance score -->
+                                Clean, semantic, high-performance portfolio framework tailored for software engineers with automated theme switching and SEO optimization.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <span>Code Repository</span> &rarr;
+                                </a>
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <span>Live Demo</span> &nearr;
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             6. TESTIMONIALS SECTION
+             Endorsements, recommendations, and peer reviews.
+             ===================================================== -->
+        <section id="testimonials" class="testimonials-section" aria-labelledby="testimonials-heading">
+            <div class="container">
+                <header class="section-header">
+                    <p class="section-subtitle">Peer Reviews &amp; Recommendations</p>
+                    <h2 id="testimonials-heading" class="section-title">Testimonials</h2>
+                </header>
+
+                <div class="testimonials-grid">
+                    <!-- Testimonial 1 -->
+                    <article class="testimonial-card">
+                        <div class="testimonial-header">
+                            <span class="pixel-rating" aria-label="5 out of 5 stars">★★★★★</span>
+                            <span class="pixel-slot-tag">[ENDORSED]</span>
+                        </div>
+                        <blockquote class="testimonial-quote">
+                            "Shifa is an outstanding software engineer who combines sharp problem-solving skills with a remarkable eye for clean, modular code. She optimized our backend throughput and delivered core features with high reliability."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar-pixel">
+                                <span>TL</span>
+                            </div>
+                            <div class="author-info">
+                                <h3 class="author-name">Alex Morgan</h3>
+                                <p class="author-role">Engineering Lead, Tech Solutions Inc.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Testimonial 2 -->
+                    <article class="testimonial-card">
+                        <div class="testimonial-header">
+                            <span class="pixel-rating" aria-label="5 out of 5 stars">★★★★★</span>
+                            <span class="pixel-slot-tag">[VERIFIED]</span>
+                        </div>
+                        <blockquote class="testimonial-quote">
+                            "Working with Shifa was seamless. She has a deep understanding of full-stack engineering, writes thoroughly documented code, and always keeps the end-user experience top of mind."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar-pixel">
+                                <span>PM</span>
+                            </div>
+                            <div class="author-info">
+                                <h3 class="author-name">Sarah Chen</h3>
+                                <p class="author-role">Senior Product Manager, Digital Lab</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Testimonial 3 -->
+                    <article class="testimonial-card">
+                        <div class="testimonial-header">
+                            <span class="pixel-rating" aria-label="5 out of 5 stars">★★★★★</span>
+                            <span class="pixel-slot-tag">[RECOMMENDED]</span>
+                        </div>
+                        <blockquote class="testimonial-quote">
+                            "Shifa’s enthusiasm for learning modern stacks and tackling complex data structure puzzles made her a go-to collaborator on our engineering team. Any team would be lucky to have her!"
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar-pixel">
+                                <span>SE</span>
+                            </div>
+                            <div class="author-info">
+                                <h3 class="author-name">David Kumar</h3>
+                                <p class="author-role">Staff Software Engineer</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             7. CHAT SECTION (INTERACTIVE PIXEL TERMINAL)
+             Interactive 8-bit AI chat simulator / quick questions.
+             ===================================================== -->
+        <section id="chat" class="chat-section" aria-labelledby="chat-heading">
+            <div class="container">
+                <header class="section-header">
+                    <p class="section-subtitle">Instant Dialogue // Ask Me Anything</p>
+                    <h2 id="chat-heading" class="section-title">Terminal Chat</h2>
+                </header>
+
+                <div class="pixel-chat-wrapper">
+                    <!-- Retro CRT Terminal Window -->
+                    <div class="pixel-chat-window">
+                        <!-- Terminal Window Title Bar -->
+                        <div class="terminal-titlebar">
+                            <div class="terminal-lights">
+                                <span class="light red"></span>
+                                <span class="light yellow"></span>
+                                <span class="light green"></span>
+                            </div>
+                            <span class="terminal-title-text">👾 SHIFA_BOT // v2.0-ARCADE</span>
+                            <span class="terminal-status-badge">ONLINE</span>
+                        </div>
+
+                        <!-- Chat Messages Container -->
+                        <div id="chat-messages" class="chat-messages-container" aria-live="polite">
+                            <!-- Bot Welcome Message -->
+                            <div class="chat-message bot-message">
+                                <div class="message-meta">
+                                    <span class="msg-sender">&gt; SHIFA_BOT:</span>
+                                    <span class="msg-time">JUST NOW</span>
+                                </div>
+                                <div class="message-bubble">
+                                    Hello explorer! Welcome to Shifa's portfolio terminal. Click any quick query below or type your question to learn more about Shifa!
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Prompts Buttons -->
+                        <div class="chat-quick-prompts" aria-label="Suggested questions">
+                            <button type="button" class="quick-prompt-btn" data-query="stack">
+                                <span>[1] Tech Stack?</span>
+                            </button>
+                            <button type="button" class="quick-prompt-btn" data-query="hire">
+                                <span>[2] Open to hire?</span>
+                            </button>
+                            <button type="button" class="quick-prompt-btn" data-query="projects">
+                                <span>[3] Key Projects?</span>
+                            </button>
+                            <button type="button" class="quick-prompt-btn" data-query="contact">
+                                <span>[4] How to contact?</span>
+                            </button>
+                        </div>
+
+                        <!-- Chat Input Form -->
+                        <form id="pixel-chat-form" class="pixel-chat-input-row">
+                            <span class="input-prompt-cursor" aria-hidden="true">&gt;</span>
+                            <label for="chat-user-input" class="visually-hidden">Ask a question</label>
+                            <input type="text" id="chat-user-input" class="pixel-chat-input" placeholder="Type a message or click a prompt above..." autocomplete="off">
+                            <button type="submit" class="pixel-chat-send-btn" aria-label="Send message">
+                                <span>SEND ▶</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             8. CONTACT SECTION
+             Contact information, social connections, and contact form.
+             ===================================================== -->
+        <section id="contact" class="contact-section" aria-labelledby="contact-heading">
+            <div class="container">
+                <header class="section-header">
+                    <p class="section-subtitle">Let's Connect</p>
+                    <h2 id="contact-heading" class="section-title">Get In Touch</h2>
+                </header>
+
+                <div class="contact-grid">
+                    <!-- Contact Details -->
+                    <div class="contact-info">
+                        <h3 class="contact-subheading">Have a project or opportunity?</h3>
+                        <p class="contact-intro">
+                            <!-- Placeholder: Short invitation message -->
+                            I am always open to discussing new engineering projects, full-time opportunities, or tech discussions. Feel free to reach out via email or through the form.
+                        </p>
+
+                        <div class="contact-methods">
+                            <div class="contact-method-item">
+                                <span class="method-icon">✉️</span>
+                                <div>
+                                    <span class="method-label">Email</span>
+                                    <a href="mailto:shifa@example.com" class="method-value">shifa@example.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-method-item">
+                                <span class="method-icon">📍</span>
+                                <div>
+                                    <span class="method-label">Location</span>
+                                    <span class="method-value">Open to Remote &amp; On-Site</span>
+                                </div>
+                            </div>
+                            <div class="contact-method-item">
+                                <span class="method-icon">💼</span>
+                                <div>
+                                    <span class="method-label">LinkedIn</span>
+                                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="method-value">linkedin.com/in/shifakhanam</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form (Placeholder) -->
+                    <form id="contact-form" class="contact-form" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="sender-name" class="form-label">Full Name</label>
+                            <input type="text" id="sender-name" name="name" class="form-control" placeholder="Jane Doe" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sender-email" class="form-label">Email Address</label>
+                            <input type="email" id="sender-email" name="email" class="form-control" placeholder="jane@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sender-subject" class="form-label">Subject</label>
+                            <input type="text" id="sender-subject" name="subject" class="form-control" placeholder="Project Inquiry / Job Opportunity" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sender-message" class="form-label">Message</label>
+                            <textarea id="sender-message" name="message" class="form-control" rows="5" placeholder="Write your message here..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span>Send Message</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========================================================
+         FOOTER
+         Semantic footer with copyright, navigation anchor, and credits.
+         ========================================================= -->
+    <footer id="site-footer" class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <a href="#hero" class="brand-logo footer-logo" aria-label="Back to top">
+                    <span class="logo-bracket">&lt;</span><span class="logo-text">Shifa</span><span class="logo-accent">.dev</span><span class="logo-bracket">/&gt;</span>
+                </a>
+                <p class="footer-copy">
+                    &copy; 2026 Shifa Khanam. Built with semantic HTML, accessible CSS, and clean engineering.
+                </p>
+            </div>
+
+            <div class="footer-right">
+                <nav class="footer-nav" aria-label="Footer Navigation">
+                    <ul class="footer-nav-list">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#timeline">Timeline</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#chat">Chat</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Companion Script for Theme Toggle and Interactions -->
+    <script src="script.js"></script>
+</body>
+</html>
